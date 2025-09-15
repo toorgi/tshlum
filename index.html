@@ -9,6 +9,12 @@
     body {
       font-family: Arial, sans-serif;
       background: linear-gradient(to right, #6b5b95, #feb236);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
     .card {
       background: white;
@@ -16,7 +22,6 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       padding: 2rem;
       max-width: 500px;
-      margin: 4rem auto;
       text-align: center;
     }
     .game-title {
@@ -56,10 +61,9 @@
   <script>
     paypal.HostedButtons({
       hostedButtonId: "D7L4GPKZCTYXU",
-      // ניתן להוסיף כאן callbacks במידה ותרצה הפניה אוטומטית לאחר תשלום
       onApprove: function(data, actions) {
-        // לדוגמה: הפניה לדף המשחק
-        window.location.href = "https://github.com/YourUsername/game-project/משחק.html";
+        // כאן תוכל לשים את הקישור לדף המשחק שלך
+        window.location.href = "https://YourUsername.github.io/game-project/משחק.html";
       }
     }).render("#paypal-container-D7L4GPKZCTYXU");
   </script>
