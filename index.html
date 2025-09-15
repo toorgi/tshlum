@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תשלום למשחק הזוגי</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6b5b95, #feb236);
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      padding: 2rem;
+      max-width: 500px;
+      margin: 4rem auto;
+      text-align: center;
+    }
+    .game-title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #6b5b95;
+      margin-bottom: 1rem;
+    }
+    .game-desc {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .paypal-btn {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="game-title">משחק זוגי דיגיטלי</div>
+    <div class="game-desc">
+      חווית משחק מהנה ומאתגרת עם קלפים וצלילים מקוריים!  
+      שלם עכשיו כדי לקבל גישה מלאה למשחק וליהנות מכל הפיצ'רים.
+    </div>
+
+    <!-- קונטיינר כפתור פייפל -->
+    <div id="paypal-container-D7L4GPKZCTYXU" class="paypal-btn"></div>
+  </div>
+
+  <!-- SDK פייפל -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAAN1m_xONmhBh4bAoOVHDZkVcS_jMzFNxhEVZ6ZVplTSDB6gQfune1J4Jr2sVKPrram8a2W_T55ee_4ns&components=hosted-buttons&disable-funding=venmo&currency=ILS">
+  </script>
+
+  <!-- כפתור פייפל -->
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "D7L4GPKZCTYXU",
+      // ניתן להוסיף כאן callbacks במידה ותרצה הפניה אוטומטית לאחר תשלום
+      onApprove: function(data, actions) {
+        // לדוגמה: הפניה לדף המשחק
+        window.location.href = "https://github.com/YourUsername/game-project/משחק.html";
+      }
+    }).render("#paypal-container-D7L4GPKZCTYXU");
+  </script>
+
+</body>
+</html>
